@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['agroindustria.onrender.com',
                  "200.129.71.149",
                  ]
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/agroindustria/login/'
 
 AUTH_USER_MODEL = 'controle.Usuario'
 
