@@ -28,8 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['agroindustria.onrender.com',
                  "127.0.0.1", 
                  "200.129.71.149",
-                 "http://200.129.71.149/agroindustria/",
-                 "http://200.129.71.149/agroindustria"]
+                 ]
 
 LOGIN_URL = '/login/'
 
@@ -127,7 +126,16 @@ USE_TZ = True
 
 FORCE_SCRIPT_NAME = '/agroindustria'
 
+# Opcional, mas recomendado:
+# Garante que as respostas de redirect usem o esquema correto (http/https)
+# quando atrás de um proxy.
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 STATIC_URL = '/agroindustria/static/'
+
+# Diretório onde o collectstatic vai juntar todos os arquivos estáticos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
