@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Amostra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Projetos</a>
+            <a class="navbar-brand" href="/projeto/{{ projeto_id }}/analise/{{analise_id}}">Amostras</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {% if user.administrador %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Editar Amostra</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_nome" class="form-label">Nome da Amostra</label>
+                {{ form.nome }}
+            </div>
+            <div class="mb-3">
+                <label for="id_peso_cap_vazia" class="form-label">Peso da Cápsula Vazia</label>
+                {{ form.peso_cap_vazia }}
+            </div>
+            <div class="mb-3">
+                <label for="id_amostra_inicial" class="form-label">Amostra Inicial</label>
+                {{ form.amostra_inicial }}
+            </div>
+            <div class="mb-3">
+                <label for="id_peso_final" class="form-label">Peso Final</label>
+                {{ form.peso_final }}
+            </div>
+            <button type="submit" class="btn btn-warning">Salvar Alterações</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoAkvZ7bBTx7b1D2xbz4z9u6L8y7Qp1K5j2k9e+6Jo8+N9p" crossorigin="anonymous"></script>
+</body>
+</html>
