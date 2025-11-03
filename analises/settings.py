@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['agroindustria.onrender.com',
                  "127.0.0.1", 
                  "200.129.71.149",
+                 "integramaker.ifpb.edu.br",
                  ]
 
 LOGIN_URL = '/agroindustria/login/'
