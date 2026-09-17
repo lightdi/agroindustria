@@ -1,0 +1,9 @@
+services:
+  agroindustria:
+    build:
+      context: https://github.com/lightdi/agroindustria.git
+      dockerfile: dockerfile
+    container_name: agroindustria
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
