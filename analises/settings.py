@@ -27,7 +27,14 @@ SECRET_KEY = 'django-insecure-hf_h^*miqm0j%7hbh@@bb#v%ul##_@8dx3dw0r%35w1%u)5x#-
 DEBUG = True
 
 ALLOWED_HOSTS = ['agroindustria.onrender.com',
-                 "127.0.0.1", 
+                 "127.0.0.1",
+                 "10.5.51.111",
+                 "10.5.6.250",
+                 "10.5.7.250",
+                 "10.5.14.250",
+                 "lab1.sousa.ifpb.edu.br",
+                 "lab2.sousa.ifpb.edu.br",
+                 "lab3.sousa.ifpb.edu.br",
                  "200.129.71.149",
                  "integramaker.ifpb.edu.br",
                  ]
