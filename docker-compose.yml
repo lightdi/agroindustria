@@ -1,9 +1,37 @@
 services:
+
   agroindustria:
     build:
       context: https://github.com/lightdi/agroindustria.git
       dockerfile: dockerfile
     container_name: agroindustria
+    restart: unless-stopped
+
+    environment:
+      DB_NAME: agroindustria
+      DB_USER: agroindustria
+      DB_PASSWORD: agroindustria123
+      DB_HOST: postgres
+      DB_PORT: "5432"
+
     ports:
       - "5001:5001"
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: agroindustria-postgres
     restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: agroindustria
+      POSTGRES_USER: agroindustria
+      POSTGRES_PASSWORD: agroindustria123
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
