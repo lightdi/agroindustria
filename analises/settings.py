@@ -39,8 +39,8 @@ ALLOWED_HOSTS = ['agroindustria.onrender.com',
                  "integramaker.ifpb.edu.br",
                  ]
 
-LOGIN_URL = '/agroindustria/login/'
-#LOGIN_URL = 'login/'
+#LOGIN_URL = '/agroindustria/login/'
+LOGIN_URL = 'login/'
 
 AUTH_USER_MODEL = 'controle.Usuario'
 
@@ -145,7 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-FORCE_SCRIPT_NAME = '/agroindustria'
+#FORCE_SCRIPT_NAME = '/agroindustria'
 
 # Opcional, mas recomendado:
 # Garante que as respostas de redirect usem o esquema correto (http/https)
@@ -153,9 +153,9 @@ FORCE_SCRIPT_NAME = '/agroindustria'
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-STATIC_URL = '/agroindustria/static/'
+#STATIC_URL = '/agroindustria/static/'
 
-#STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 
 # Diretório onde o collectstatic vai juntar todos os arquivos estáticos
 #STATIC_ROOT = BASE_DIR / 'staticfiles'
